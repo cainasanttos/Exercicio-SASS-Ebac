@@ -1,0 +1,75 @@
+// Importando variáveis com @use e trazendo todas as variáveis para o escopo
+@use 'variables' as *
+
+// Estilos gerais
+.container
+  max-width: $container-width
+  width: 100%
+  margin: 0 auto
+
+header
+  background-color: $header-bg
+  position: sticky
+  top: 0
+  left: 0
+
+  .container
+    display: flex
+    justify-content: space-between
+    align-items: center
+    padding: $padding-header
+
+.menu
+  display: flex
+
+  li
+    font-weight: bold
+    margin-left: 24px
+
+    a
+      color: #fff
+      text-decoration: none
+
+section
+  padding: $padding-section
+
+.products
+  margin-top: $margin-product
+  display: grid
+  grid-template-columns: repeat(3, 32.66%)
+  column-gap: $grid-gap
+  row-gap: $row-gap
+  width: 100%
+
+.product-item img
+  width: 100%
+  border-radius: $border-radius-img
+
+.product-button
+  display: block
+  background-color: $button-bg
+  color: #fff
+  text-align: center
+  padding: 8px 0
+  border-radius: $border-radius
+  margin-top: 8px
+  text-decoration: none
+
+  &:hover
+    background-color: $button-hover-bg
+
+// Media Queries
+@media screen and (max-width: 1023px)
+  .container
+    max-width: 80%
+
+  .products
+    grid-template-columns: repeat(2, 48.5%)
+    column-gap: 3%
+
+@media screen and (max-width: 767px)
+  .products
+    display: block
+
+    .product-item
+      margin-bottom: 32px
